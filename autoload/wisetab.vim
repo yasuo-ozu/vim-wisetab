@@ -95,8 +95,13 @@ function! wisetab#CopyIndent(r)
 			let d = d + 1
 		endif
 	endwhile
-	let pos[2] = strlen(rs) + strlen(ls) - i + 1
-	let rs = rs . strpart(ls, i) . 'a'
+	let ii = i
+	while ls[ii] == rs[j]
+		let ii = ii + 1
+		let j = j + 1
+	endwhile
+	let pos[2] = strlen(rs) + ii - i + 1
+	let rs = rs . strpart(ls, i, ii - i) . achar . strpart(ls, ii)
 	call setline('.', rs)
 	call setpos('.', pos)
 endfunction
