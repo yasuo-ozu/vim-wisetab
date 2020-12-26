@@ -19,8 +19,8 @@ call wisetab#calculateParams()
 
 inoremap <silent> <expr> <C-i> wisetab#InsertSpaceIndent()
 inoremap <silent> <CR> <CR>a<BS><ESC>:call wisetab#CopyIndent(-1)<CR>i<Right><BS>
-nnoremap <silent> o oa<BS><Esc>:call wisetab#CopyIndent(-1)<CR>i<Right><BS>
-nnoremap <silent> O Oa<BS><Esc>:call wisetab#CopyIndent(1)<CR>i<Right><BS>
+nnoremap <silent> <nowait> o oa<BS><Esc>:call wisetab#CopyIndent(-1)<CR>i<Right><BS>
+nnoremap <silent> <nowait> O Oa<BS><Esc>:call wisetab#CopyIndent(1)<CR>i<Right><BS>
 
 let &cpo = s:save_cpo
 unlet s:save_cpo
