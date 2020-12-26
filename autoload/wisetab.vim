@@ -96,7 +96,7 @@ function! wisetab#CopyIndent(r)
 		endif
 	endwhile
 	let ii = i
-	while ls[ii] == rs[j]
+	while ls[ii] == rs[j] && ii < lm && j < rm
 		let ii = ii + 1
 		let j = j + 1
 	endwhile
